@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>足もみサロン 予約ページ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="函館の自宅サロン 足もみサロン（仮）｜完全予約制で安心の足もみメニューをご提供。予約はこちらから。">
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #fff3e0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #c8e6c9;
+      padding: 1.5em;
+      text-align: center;
+      border-bottom: 1px solid #bbb;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+    main {
+      padding: 2em;
+      max-width: 600px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.3em;
+    }
+    form label {
+      display: block;
+      margin: 1em 0 0.5em;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 0.7em;
+      font-size: 1em;
+      margin-bottom: 1em;
+      border: 1px solid #ccc;
+      border-radius: 0.5em;
+    }
+    button {
+      background-color: #81c784;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #66bb6a;
+    }
+    .message {
+      padding: 1em;
+      background: #e0f2f1;
+      border-radius: 0.5em;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>足もみサロン（仮）</h1>
+    <p>完全予約制・自宅サロン｜北海道函館市</p>
+  </header>
+
+  <main>
+    <h2>ご予約フォーム</h2>
+    <form id="reserveForm">
+      <label>お名前：
+        <input type="text" name="name" required>
+      </label>
+      <label>ご希望日時：
+        <input type="datetime-local" name="datetime" required>
+      </label>
+      <label>ご希望コース：
+        <select name="course" required>
+          <option value="足もみ30分">足もみ30分：4,000円</option>
+          <option value="足もみ60分">足もみ60分：7,500円</option>
+        </select>
+      </label>
+      <button type="submit">予約する</button>
+    </form>
+    <div id="result" class="message" style="display:none;"></div>
+  </main>
+
+  <script>
+    document.getElementById('reserveForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const result = document.getElementById('result');
+      result.style.display = 'block';
+      result.innerText = '仮の送信処理です。本番ではここから予約情報が送信されます。';
+    });
+  </script>
+</body>
+</html>
+

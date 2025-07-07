@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>足もみサロン（仮）</title>
+  <style>
+    body {
+      font-family: 'Yu Gothic', sans-serif;
+      background-color: #fff3e0;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+      color: #333;
+    }
+
+    h1 {
+      color: #4e7c59;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #4e7c59;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 30px;
+    }
+
+    .btn:hover {
+      background-color: #3a6246;
+    }
+
+ .slideshow {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  height: 400px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;      /* 幅をスライドショーにぴったり */
+  height: 100%;     /* 高さもぴったり */
+  object-fit: cover;/* はみ出さず切り取り表示（これ大事） */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 16px; /* 角を丸く揃える（オプション） */
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
+
+
+    .slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slideshow img.active {
+      opacity: 1;
+    }
+  </style>
+  .slideshow-description {
+  text-align: center;
+  font-size: 2.5em;
+  color: #444;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+</head>
+<body>
+  <h1>足もみサロン（仮）へようこそ</h1>
+  <p>自然の中で、心も身体もリフレッシュ🌿
+
+  </p>
+
+  <div class="slideshow">
+
+
+
+    <img src="images/bg1.jpg" class="active" alt="スライド1">
+    <img src="images/bg2.jpg" alt="スライド2">
+    <img src="images/bg3.jpg" alt="スライド3">
+  </div>
+<p class="slideshow-description">
+  リラックスできる空間で、あなたの疲れを癒します🌿
+     
+         ____________________________________
+    _________________________________________
+    _________________________________________
+    _________________________________________
+</p>
+  <a class="btn" href="reserve.html">▶ ご予約はこちら</a>
+
+  <script>
+    const slides = document.querySelectorAll(".slideshow img");
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }, 5000);
+  </script>
+</body>
+</html>
